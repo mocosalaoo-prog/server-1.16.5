@@ -127,3 +127,15 @@
 [27Sep2025 22:41:13.134] [Worker-Main-2/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 97%
 [27Sep2025 22:41:13.349] [Server thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Time elapsed: 38216 ms
 [27Sep2025 22:41:13.352] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (45.729s)! For help, type "help"
+[27Sep2025 23:13:51.066] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[27Sep2025 23:13:51.068] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[27Sep2025 23:13:51.068] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[27Sep2025 23:13:51.068] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[27Sep2025 23:13:51.177] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[27Sep2025 23:13:51.178] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[27Sep2025 23:13:51.179] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[27Sep2025 23:13:51.179] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[27Sep2025 23:13:51.180] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[27Sep2025 23:13:51.199] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[27Sep2025 23:13:51.211] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[27Sep2025 23:13:51.211] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
