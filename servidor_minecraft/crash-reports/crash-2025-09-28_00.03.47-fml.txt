@@ -1,0 +1,138 @@
+---- Minecraft Crash Report ----
+// Oh - I know what I did wrong!
+
+Time: 9/28/25, 12:03 AM
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.fml.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:71) ~[forge:?] {re:classloading}
+	at net.minecraftforge.fml.server.ServerModLoader.load(ServerModLoader.java:37) ~[forge:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:95) ~[?:?] {re:classloading}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?] {}
+	at net.minecraftforge.fml.loading.FMLServerLaunchProvider.lambda$launchService$0(FMLServerLaunchProvider.java:37) ~[forge-1.16.5-36.2.42.jar:36.2] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) [modlauncher-8.1.3.jar:?] {}
+	at net.minecraftforge.server.ServerMain$Runner.runLauncher(ServerMain.java:49) [forge-1.16.5-36.2.42.jar:?] {}
+	at net.minecraftforge.server.ServerMain$Runner.access$100(ServerMain.java:46) [forge-1.16.5-36.2.42.jar:?] {}
+	at net.minecraftforge.server.ServerMain.main(ServerMain.java:43) [forge-1.16.5-36.2.42.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Stacktrace:
+	at net.minecraftforge.fml.loading.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:57) ~[forge-1.16.5-36.2.42.jar:36.2] {}
+-- MOD bocchium --
+Details:
+	Mod File: bocchium-1.16.5-0.0.2.jar
+	Failure message: Bocchium (bocchium) has failed to load correctly
+		java.lang.RuntimeException: Attempted to load class net/minecraft/client/Minecraft for invalid dist DEDICATED_SERVER
+	Mod Version: 1.16.5-0.0.2
+	Mod Issue URL: NOT PROVIDED
+	Exception message: java.lang.RuntimeException: Attempted to load class net/minecraft/client/Minecraft for invalid dist DEDICATED_SERVER
+Stacktrace:
+	at net.minecraftforge.fml.loading.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:57) ~[forge-1.16.5-36.2.42.jar:36.2] {}
+	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:85) ~[modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader$DelegatedClassLoader.findClass(TransformingClassLoader.java:265) ~[modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.loadClass(TransformingClassLoader.java:136) ~[modlauncher-8.1.3.jar:?] {re:classloading}
+	at cpw.mods.modlauncher.TransformingClassLoader.loadClass(TransformingClassLoader.java:98) ~[modlauncher-8.1.3.jar:?] {re:classloading}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:527) ~[?:?] {}
+	at com.teampotato.bocchium.Bocchium.<init>(Bocchium.java:51) ~[bocchium:1.16.5-0.0.2] {re:classloading}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {re:classloading,re:classloading}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?] {re:classloading,re:classloading}
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {re:classloading,re:classloading}
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?] {}
+	at java.lang.Class.newInstance(Class.java:584) ~[?:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:67) ~[forge:36.2] {re:classloading}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$4(ModContainer.java:106) ~[forge:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1736) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1728) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Linux (amd64) version 6.8.0-1030-azure
+	Java Version: 11.0.28, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1929291784 bytes (1839 MB) / 2149580800 bytes (2050 MB) up to 4294967296 bytes (4096 MB)
+	CPUs: 2
+	JVM Flags: 2 total; -Xms2G -Xmx4G
+	ModLauncher: 8.1.3+8.1.3+main-8.1.x.c94d18ec
+	ModLauncher launch target: fmlserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.4.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.2.42.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.2.42.jar runtime_enum_extender PLUGINSERVICE 
+		/forge-1.16.5-36.2.42.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.2.42.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.4.jar mixin TRANSFORMATIONSERVICE 
+		/OptiFine_1.16.5_HD_U_G8.jar OptiFine TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.2.42.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.2
+	Forge: net.minecraftforge:36.2.42
+	FML Language Providers: 
+		javafml@36.2
+		minecraft@1
+	Mod List: 
+		forge-1.16.5-36.2.42-server.jar                   |Minecraft                     |minecraft                     |1.16.5              |CREATE_REG|Manifest: NOSIGNATURE
+		smoothchunk1.16.5-2.0.jar                         |Smoothchunk mod               |smoothchunk                   |2.0                 |CREATE_REG|Manifest: NOSIGNATURE
+		puffish_skills-0.5.0-1.16.5-forge.jar             |Pufferfish's Skills           |puffish_skills                |0.5.0               |CREATE_REG|Manifest: NOSIGNATURE
+		Chunky-1.2.123.jar                                |Chunky                        |chunky                        |1.2.123             |CREATE_REG|Manifest: NOSIGNATURE
+		Ksyxis-1.3.4.jar                                  |Ksyxis                        |ksyxis                        |1.3.4               |CREATE_REG|Manifest: NOSIGNATURE
+		betterleveling-1.16.5-0.6.2.jar                   |Better Leveling               |betterleveling                |1.16.5-0.6.2        |CREATE_REG|Manifest: NOSIGNATURE
+		betterfpsdist-1.2.jar                             |betterfpsdist mod             |betterfpsdist                 |1.2                 |CREATE_REG|Manifest: NOSIGNATURE
+		curios-forge-1.16.5-4.1.0.0.jar                   |Curios API                    |curios                        |1.16.5-4.1.0.0      |CREATE_REG|Manifest: NOSIGNATURE
+		tetra-1.16.5-3.20.0.jar                           |Tetra                         |tetra                         |3.20.0              |CREATE_REG|Manifest: NOSIGNATURE
+		Xaeros_Minimap_25.2.6_Forge_1.16.5.jar            |Xaero's Minimap               |xaerominimap                  |25.2.6              |CREATE_REG|Manifest: NOSIGNATURE
+		gravestone-1.16.5-1.0.6.jar                       |Gravestone Mod                |gravestone                    |1.16.5-1.0.6        |CREATE_REG|Manifest: NOSIGNATURE
+		collective-1.16.5-5.49.jar                        |Collective                    |collective                    |5.49                |CREATE_REG|Manifest: NOSIGNATURE
+		bocchium-1.16.5-0.0.2.jar                         |Bocchium                      |bocchium                      |1.16.5-0.0.2        |ERROR     |Manifest: NOSIGNATURE
+		XaerosWorldMap_1.39.12_Forge_1.16.5.jar           |Xaero's World Map             |xaeroworldmap                 |1.39.12             |CREATE_REG|Manifest: NOSIGNATURE
+		mgui-1.16.5-3.3.0.jar                             |mgui                          |mgui                          |3.3.0               |CREATE_REG|Manifest: NOSIGNATURE
+		modernfix-forge-5.18.0+mc1.16.5.jar               |ModernFix                     |modernfix                     |5.18.0+mc1.16.5     |CREATE_REG|Manifest: NOSIGNATURE
+		jei-1.16.5-7.8.0.1013.jar                         |Just Enough Items             |jei                           |7.8.0.1013          |CREATE_REG|Manifest: NOSIGNATURE
+		StorageDrawers-1.16.3-8.5.2.jar                   |Storage Drawers               |storagedrawers                |8.5.2               |CREATE_REG|Manifest: NOSIGNATURE
+		Artifacts-1.16.5-2.10.6.jar                       |Artifacts                     |artifacts                     |1.16.5-2.10.6       |CREATE_REG|Manifest: NOSIGNATURE
+		configured-1.5.4-1.16.5.jar                       |Configured                    |configured                    |1.5.4               |CREATE_REG|Manifest: NOSIGNATURE
+		doespotatotick-1.16.5-5.3.3.jar                   |DoesPotatoTick                |doespotatotick                |1.16.5-5.3.3        |CREATE_REG|Manifest: NOSIGNATURE
+		ftb-ultimine-forge-1605.3.1-build.45.jar          |FTB Ultimine                  |ftbultimine                   |1605.3.1-build.45   |CREATE_REG|Manifest: NOSIGNATURE
+		sophisticatedbackpacks-1.16.5-3.15.20.755.jar     |Sophisticated Backpacks       |sophisticatedbackpacks        |1.16.5-3.15.20.755  |CREATE_REG|Manifest: NOSIGNATURE
+		u_team_core-forge-1.16.5-3.2.1.378.jar            |U Team Core                   |uteamcore                     |3.2.1.378           |CREATE_REG|Manifest: f4:a6:0b:ee:cb:8a:1a:ea:9f:9d:45:91:8f:8b:b3:ae:26:f3:bf:05:86:1d:90:9e:f6:32:2a:1a:ed:1d:ce:b0
+		OnlyLooking-1.16.5-1.0.0.jar                      |OnlyLooking                   |onlylooking                   |1.16.5-1.0.0        |CREATE_REG|Manifest: NOSIGNATURE
+		lazydfu-0.1.3.jar                                 |LazyDFU                       |lazydfu                       |0.1.3               |CREATE_REG|Manifest: NOSIGNATURE
+		relics-1.16.5-0.3.4.4.jar                         |Relics                        |relics                        |0.3.4.4             |CREATE_REG|Manifest: NOSIGNATURE
+		BeeFix-1.16.2-1.0.0.4.jar                         |Bee Fix                       |beefix                        |1.0.0.4             |CREATE_REG|Manifest: NOSIGNATURE
+		architectury-1.32.68.jar                          |Architectury                  |architectury                  |1.32.68             |CREATE_REG|Manifest: NOSIGNATURE
+		ftb-library-forge-1605.3.4-build.90.jar           |FTB Library                   |ftblibrary                    |1605.3.4-build.90   |CREATE_REG|Manifest: NOSIGNATURE
+		ferritecore-2.1.1-forge.jar                       |Ferrite Core                  |ferritecore                   |2.1.1               |CREATE_REG|Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		litematica-forge-1.16.5-0.0.0-dev.20210606.150444.|Litematica                    |litematica                    |0.0.0-dev.20210606.1|CREATE_REG|Manifest: NOSIGNATURE
+		malilib-forge-1.16.5-0.10.0-dev.21+beta.1.jar     |MaLiLib                       |malilib                       |0.10.0-dev.21+beta.1|CREATE_REG|Manifest: NOSIGNATURE
+		farsight-1.7.jar                                  |Farsight mod                  |farsight_view                 |1.7                 |CREATE_REG|Manifest: NOSIGNATURE
+		cloth-config-4.17.132-forge.jar                   |Cloth Config v4 API           |cloth-config                  |4.17.132            |CREATE_REG|Manifest: NOSIGNATURE
+		PuzzlesLib-v1.0.15-1.16.5-Forge.jar               |Puzzles Lib                   |puzzleslib                    |1.0.15              |CREATE_REG|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		forge-1.16.5-36.2.42-universal.jar                |Forge                         |forge                         |36.2.42             |CREATE_REG|Manifest: 22:af:21:d8:19:82:7f:93:94:fe:2b:ac:b7:e4:41:57:68:39:87:b1:a7:5c:c6:44:f9:25:74:21:14:f5:0d:90
+		infinitetrading_1.16.5-3.0.jar                    |Infinite Trading              |infinitetrading               |3.0                 |CREATE_REG|Manifest: NOSIGNATURE
+		expandability-2.0.1-forge.jar                     |ExpandAbility                 |expandability                 |2.0.1               |CREATE_REG|Manifest: NOSIGNATURE
+		geckolib-forge-1.16.5-3.0.106.jar                 |GeckoLib                      |geckolib3                     |3.0.106             |CREATE_REG|Manifest: NOSIGNATURE
+		EnchantingInfuser-v1.0.2-1.16.5-Forge.jar         |Enchanting Infuser            |enchantinginfuser             |1.0.2               |CREATE_REG|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		effortlessbuilding-1.16.3-2.32.jar                |Effortless Building           |effortlessbuilding            |1.16.3-2.32         |CREATE_REG|Manifest: NOSIGNATURE
+	Crash Report UUID: e14b7cf4-07dd-4de6-9028-91a2f9ae9eb9
